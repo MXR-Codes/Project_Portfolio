@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/nav.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+    <script src="./js/nav.js"></script>
+    <script src="./js/mouse.js"></script>
+    <link rel="icon" href="./images/Nav/logo.png" type="image/x-icon">
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <div id="container">
+        <h1 id="titleText" class="draggable" onclick="selectText('title')">Happy Father's day</h1>
+        <p id="descriptionText" class="draggable" onclick="selectText('description')">Wishing my father a happy holiday</p>
+    </div>
+    <div id="textOptions" style="display: none;">
+        <input type="text" id="contentInput" placeholder="Edit text..." oninput="updateContent()">
+        <select id="fontSelect" onchange="updateFont()">
+            <option value="Arial">Arial</option>
+            <option value="Courier">Courier</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <link rel="icon" href="./images/Nav/logo.png" type="image/x-icon">
+        </select>
+        <input type="number" id="fontSize" placeholder="Font size" oninput="updateFontSize()">
+        <input type="color" id="colorPicker" oninput="updateColor()">
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+        <button class="change-background" onclick="document.getElementById('fileInput').click()">Change background</button>
+        <button onclick="saveAsPDF()">Save as PDF</button>
+    </div>
+    <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="changeBackground(event)">
+      
+    <script src="./js/Fathercard.js"></script>
+</body>
+</html>

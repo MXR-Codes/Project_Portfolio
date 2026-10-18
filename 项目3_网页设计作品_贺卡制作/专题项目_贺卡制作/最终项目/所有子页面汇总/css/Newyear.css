@@ -1,0 +1,82 @@
+#imageGallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px; /* 图片区域与标题说明之间的间距 */
+  padding: 0 20px;
+}
+
+#imageGallery img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  margin-bottom: 20px; /* 控制图片之间的上下间距 */
+}
+
+#imageGallery img:hover {
+  transform: scale(1.05);
+}
+
+
+
+.intro-text {
+  text-align: center;
+  margin-top: 40px; 
+  padding: 10px 20px;
+}
+
+.intro-text h1 {
+  font-size: 32px; 
+  font-weight: bold;
+  margin-bottom: 10px; 
+}
+
+.intro-text p {
+  font-size: 16px; 
+  line-height: 1.5; 
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#background-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(0,0,0,0.8)), url('./images/newyear-background.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* 烟花粒子样式 */
+.firework-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: yellow;
+  border-radius: 50%;
+  animation: particle-animation 1.5s linear forwards;
+}
+
+/* 粒子扩散动画 */
+@keyframes particle-animation {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.5);
+  }
+}
